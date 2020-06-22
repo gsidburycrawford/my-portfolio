@@ -30,16 +30,15 @@ public class DataServlet extends HttpServlet {
     @Override
     public void init() {
         comments = new ArrayList<String>();
+    
     }
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        comments.add("Ritsu Stormfoot");
-        comments.add("Monk");
-        comments.add("I am a leaf in the wind...but like a big, tough leaf. With swords and magic and stuff.");
+
         response.setContentType("application/json;");
         String json = convertToJson(comments);
         response.getWriter().println(json);
-    //   response.getWriter().println("<h1>Hello Geterry!</h1>");
+
     }
 
     public String convertToJsonUsingGson(ArrayList<String> comments) {
@@ -61,6 +60,29 @@ public class DataServlet extends HttpServlet {
         return json;
   }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String character_Name = request.getParameter("character-Name");
+        String character_Class = request.getParameter("character-Class");
+        String character_Comment = request.getParameter("character-Comment");
+
+
+        System.out.println(character_Name);
+        System.out.println(character_Class);
+        System.out.println(character_Comment);
+        comments.add(character_Name);
+        comments.add(character_Class);
+        comments.add(character_Comment);
+
+        
+        response.sendRedirect("/index.html");
+        
     }
+    private String getParameter(HttpServletRequest request, String name) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return null;
+    }
+    return value;
+  }
     
 }

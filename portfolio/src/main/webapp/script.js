@@ -17,11 +17,17 @@
  */
 function getComments() {
     fetch('/data').then(response => response.json()).then((comments) => {
-        const commentListElement = document.getElementById('comments-container');
+        const commentListElement = document.getElementById('comment-container');
+        console.log(comments);
         commentListElement.innerHTML = '';
+        const commentEl = document.getElementById('comment-container');
         commentListElement.appendChild(createListElement('Name: ' + comments.Name));
+        console.log(comments.get(0));
         commentListElement.appendChild(createListElement('Class: ' + comments.Class));
+        console.log(comments.get(1));
         commentListElement.appendChild(createListElement('Comment: ' + comments.Comment));
+        console.log(comments.get(2));
+        commentEl.textContent = comments.Comment;
     });
     console.log(comments.get(0));
 }

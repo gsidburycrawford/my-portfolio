@@ -49,7 +49,24 @@
           <img src = "images/nsbepro-logo-color-small.png">
       <button onclick="getComments()">Comments</button>
       <div id="interest-container"></div>
-      <div id="comments-container"></div>
+
+      <h3 id="name-container"></h4>
+      <h4 id="class-container"></h4>
+      <p id="comment-container"></p>
+
+      
+      <form action="/data" method="POST">
+
+      <h2>Comments Section:</h2>
+      
+      <p>Please leave a comment on the page.</p>
+      
+      <textarea name="character-Name">Enter your character's name here.</textarea>
+      <textarea name="character-Class">Enter your character's class here.</textarea>
+      <textarea name="character-Comment">Enter your comment here.</textarea>
+      
+      <input type="submit" />
+      <br/><br/>
     </div>
   </body>
 </html>
