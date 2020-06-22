@@ -15,6 +15,22 @@
 /**
  * Adds a random interest to the page.
  */
+function getComments() {
+    fetch('/data').then(response => response.json()).then((comments) => {
+        const commentListElement = document.getElementById('comments-container');
+        commentListElement.innerHTML = '';
+        commentListElement.appendChild(createListElement('Name: ' + comments.Name));
+        commentListElement.appendChild(createListElement('Class: ' + comments.Class));
+        commentListElement.appendChild(createListElement('Comment: ' + comments.Comment));
+    });
+    console.log(comments.get(0));
+}
+
+function createListElement(text) {
+    const liElement = document.createElement('li');
+    liElement.innerText = text;
+    return liElement;
+}
 function addRandomInterest() {
   const interests =
       ['Politics', 'Social Justice', 'Game Development', 'Reading classic literature', ' Reddit', ' Community Service', 'Cooking Italian Food', 'Cooking Soul Food'];

@@ -15,6 +15,8 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import com.google.gson.Gson;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,10 +25,42 @@ import javax.servlet.http.HttpServletResponse;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+    private ArrayList<String> comments;
+    
+    @Override
+    public void init() {
+        comments = new ArrayList<String>();
+    }
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        comments.add("Ritsu Stormfoot");
+        comments.add("Monk");
+        comments.add("I am a leaf in the wind...but like a big, tough leaf. With swords and magic and stuff.");
+        response.setContentType("application/json;");
+        String json = convertToJson(comments);
+        response.getWriter().println(json);
+    //   response.getWriter().println("<h1>Hello Geterry!</h1>");
+    }
 
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Geterry!</h1>");
+    public String convertToJsonUsingGson(ArrayList<String> comments) {
+        Gson gson = new Gson();
+        String json = gson.toJson(comments);
+        return json;
+    }
+    private String convertToJson(ArrayList<String> comments) {
+        String json = "{";
+        json += "\"Name\": ";
+        json += "\"" + comments.get(0) + "\"";
+        json += ", ";
+        json += "\"Class\": ";
+        json += "\"" + comments.get(1) + "\"";
+        json += ", ";
+        json += "\"Comment\": ";
+        json += "\"" + comments.get(2) + "\"";
+        json += "}";
+        return json;
   }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    }
+    
 }
