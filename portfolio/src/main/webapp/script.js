@@ -21,11 +21,11 @@ function getComments() {
         console.log(comments);
         commentListElement.innerHTML = '';
         const commentEl = document.getElementById('comment-container');
-        commentListElement.appendChild(createListElement('Name: ' + comments.Name));
+        commentListElement.appendChild(createListElement('Name: ' + comments.get(0)));
         console.log(comments.get(0));
-        commentListElement.appendChild(createListElement('Class: ' + comments.Class));
+        commentListElement.appendChild(createListElement('Class: ' + comments.get(1)));
         console.log(comments.get(1));
-        commentListElement.appendChild(createListElement('Comment: ' + comments.Comment));
+        commentListElement.appendChild(createListElement('Comment: ' + comments.get(2)));
         console.log(comments.get(2));
         commentEl.textContent = comments.Comment;
     });
