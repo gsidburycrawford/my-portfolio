@@ -8,11 +8,67 @@
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <h1>Geterry Sidbury-Crawford's Portfolio</h1>
+      <h2> GitHub Profile: Github.com/gksidburycrawford</h2>
+      <h2> LinkedIn Profile: Linkedin.com/in/geterrysidbury</h2>
+      <h2>About Me:</h2>
+      <p>I am certified by Cape Fear Community College as a Database Administrator and Programmer, 
+        as well as an entry-level IT Technician.  I have also obtained a The National Career 
+        Readiness Certificate from the ACT (with a platinum score) to receive these certifications. 
+        My experience with technical documentation will allow me to speak with both coworkers, consumers, 
+        and supervisors efficiently and effectively. I also have a proficiency in a variety of languages, 
+        such as Java, C++, Python, SQL, JavaScript, and others documented on my resume. Using Microsoft 
+        Visio, I can even create proper pseudo-code and flowcharts. This extended knowledge will have me
+        performing above and beyond any expectations.</p>
+      <h2>Experience and Projects</h2>
+          <h3>Google Software Product Sprint: May 2020 - Present</h3>
+          <h4>Student Developer: Mountain View, CA</h4>
+          <li>Participating in Google’s Software Product Sprint for the summer of 2020, an invite only 
+            virtual program for aspiring technologists and software developers.</li>
+          <li>Building a web-based application in Java in a dedicated development 
+          team, and with the guidance of a Google engineer.</li>
+          <li>Collaborate with top Google engineers, developers, and designers, to tackle a variety
+            of problems in a post COVID-19 world.</li>
+          <h3>Hospital Project: January 2020– Present </h3>
+          <h4>Backend Developer: Wilmington, NC </h4>
+          <li>Worked as a Back-End Developer for a Client/Server Database Application with GUI for 
+            use with a fictional Hospital </li>
+          <li>-Used Microsoft SQL Server to host Database and created a client in Java using JDBC drivers </li> 
+          <li>-Used PHP, HTML, and CSS to create and develop a working web client with an Apache Server. </li>
+          <li>-Created 3 Separate User Roles; Doctors (Who may view and list patient information), 
+            Nurses (Who can edit patient information and implement new logins), and Patients 
+            (Who can view personal information and update account balances)</li>
+          <li>Used GitHub to commit and push own project files and pull files from collaborators.</li>
+          <h3>HACKNCAT : November 2019 </h3>
+          <h4>Back-End Developer : Greensboro, NC </h4>
+          <li>Worked on a team of three; oversaw both Back-End Development and Front-End Development. </li>
+          <li>Took on the Facebook Coding Challenge and won 2nd Place Overall.</li>
+          <li>Created Spout, a Facebook service to improve communications between Businesses, 
+            Suppliers, Consumers, and Employees.</li>
+          <li>Implemented Facebook SDK’s for User Login, Media Streaming, and Posting Content.</li>
+          <img src = "images/nsbepro-logo-color-small.png">
+      <button onclick="getComments()">Comments</button>
+      <div id="interest-container"></div>
+
+      <h3 id="name-container"></h4>
+      <h4 id="class-container"></h4>
+      
+      <form action="/data" method="POST">
+
+      <h2>Comments Section:</h2>
+      
+      <p>Please leave a comment on the page.</p>
+      
+      <textarea name="character-Name">Enter your character's name here.</textarea>
+      <br/><br/>
+      <textarea name="character-Class">Enter your character's class here.</textarea>
+      <br/><br/>
+      <textarea name="character-Comment">Enter your comment here.</textarea>
+      <br/><br/>
+      <input type="submit" />
+      <br/><br/>
+      <ul id="comment-container"></ul>
+
     </div>
   </body>
 </html>
